@@ -56,11 +56,11 @@ def main_cursor():
         scamer_cursor()
 
 
-if __name__ == '__main__':
-    # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
-    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+# if __name__ == '__main__':
+#     # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
+#     answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
 
-    if answer:
-        main_cursor()
-    else:
-        exit("You exit with program!")
+#     if answer:
+#         main_cursor()
+#     else:
+#         exit("You exit with program!")

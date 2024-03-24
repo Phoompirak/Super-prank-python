@@ -37,5 +37,3 @@ if __name__ == '__main__':
     print(all_wifi)
 
     pyfiglet.print_figlet(text="Success fully", colors='RED')
-
-

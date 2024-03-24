@@ -1,10 +1,9 @@
 import os
 import time
 import keyboard
-import threading
 import multiprocessing
+from threading import Thread
 from tkinter import messagebox
-from threading import Thread, Event
 from multiprocessing import Process
 
 from virus_bomb import main_virus
@@ -32,14 +31,10 @@ def cancel_prank(checked):
             keyboard.wait()
         except Exception as e:
             print(f"Error: {e}")
+        time.sleep(0.5)
 
-def testdee(checked):
-    while checked:
-        print("TEST!!")
-        time.sleep(1)
-    
 def main_all_prank():
-    pranks = [cancel_prank, scamer_cursor, main_open_web, sound_prank, main_hackerexe, main_virus]
+    pranks = [scamer_cursor, main_open_web, sound_prank, main_hackerexe, main_virus]
     for prank in pranks:
         time.sleep(2)
         prank_thread = Process(target=prank, args=(True, ))

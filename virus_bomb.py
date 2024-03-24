@@ -91,11 +91,11 @@ def main_virus(checked):
 
 
 
-if __name__ == '__main__':
-    # เช็คว่าต้องการรันโปรแกรม (ตอนแปลงเป็น exe จะได้รู้ด้วยว่าไฟล์รัน)
-    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
-    if answer:
-        time.sleep(2)
-        main_virus()
-    else:
-        exit("You exit with program!")
+# if __name__ == '__main__':
+#     # เช็คว่าต้องการรันโปรแกรม (ตอนแปลงเป็น exe จะได้รู้ด้วยว่าไฟล์รัน)
+#     answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+#     if answer:
+#         time.sleep(2)
+#         main_virus()
+#     else:
+#         exit("You exit with program!")

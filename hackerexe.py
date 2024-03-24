@@ -122,8 +122,8 @@ def main_hackerexe(checked):
     time.sleep(3)
     writting_notepad(word_dynamic)
 
-if __name__ == '__main__':
-    thread = threading.Thread(target=scamer_cursor, args=(True, ))
-    thread.start()
-    print("Started main_hackerexe")
-    main_hackerexe(True)
+# if __name__ == '__main__':
+#     thread = threading.Thread(target=scamer_cursor, args=(True, ))
+#     thread.start()
+#     print("Started main_hackerexe")
+#     main_hackerexe(True)

@@ -11,5 +11,5 @@ def sound_prank(checked):
             # เล่นเสียง Beep
             winsound.Beep(frequency, duration)
 
-if __name__ == '__main__':
-    sound_prank()
+# if __name__ == '__main__':
+#     sound_prank()
