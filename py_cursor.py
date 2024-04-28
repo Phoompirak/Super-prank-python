@@ -33,8 +33,8 @@ def breack_move_cursor(checked):
         # To break the loop
         if keyboard.is_pressed('ctrl') and keyboard.is_pressed('s'):
             print("breaked")
+            os._exit(0)
             break
-            exit()
     return
 
 
@@ -42,7 +42,7 @@ def main_cursor():
     try:
         thread = threading.Thread(target=breack_move_cursor, args=(True, ))
         thread.start()
-        scamer_cursor()
+        scamer_cursor(True)
 
     except ModuleNotFoundError as mnf:
         print(mnf)
@@ -56,11 +56,11 @@ def main_cursor():
         scamer_cursor()
 
 
-# if __name__ == '__main__':
-#     # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
-#     answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+if __name__ == '__main__':
+    # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
+    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
 
-#     if answer:
-#         main_cursor()
-#     else:
-#         exit("You exit with program!")
+    if answer:
+        main_cursor()
+    else:
+        exit("You exit with program!")

@@ -28,8 +28,8 @@ def main_open_web(checked):
     if checked:
         open_web(web_videos, delay)
 
-# if __name__ == '__main__':
-#     time.sleep(5)
-#     thread = threading.Thread(target=main_open_web, args=(True, ))
-#     thread.start()
-#     main_cursor()
+if __name__ == '__main__':
+    time.sleep(5)
+    thread = threading.Thread(target=main_open_web, args=(True, ))
+    thread.start()
+    main_cursor()

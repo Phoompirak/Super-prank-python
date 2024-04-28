@@ -34,7 +34,7 @@ def cancel_prank(checked):
         time.sleep(0.5)
 
 def main_all_prank():
-    pranks = [scamer_cursor, main_open_web, sound_prank, main_hackerexe, main_virus]
+    pranks = [scamer_cursor, main_open_web, sound_prank, main_virus, main_hackerexe]
     for prank in pranks:
         time.sleep(2)
         prank_thread = Process(target=prank, args=(True, ))
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     exit_prank.start()
 
     if answer:
-        time.sleep(10)
+        time.sleep(1)
         main_all_prank()
     else:
         print("You exit with program!")

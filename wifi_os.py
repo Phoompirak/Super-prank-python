@@ -25,7 +25,7 @@ def looking_pws(name_wifi):
         result_name_pws = f"WIfi name: {name} | Password: {pws_wifi}\n"
         # print(result_name_pws)
         all_wifi.append([name, pws_wifi])
-        time.sleep(1)
+        time.sleep(0.5)
     return all_wifi
 
 if __name__ == '__main__':
@@ -34,6 +34,7 @@ if __name__ == '__main__':
     
     reg_name_wifi = regular_wifi()
     all_wifi = looking_pws(reg_name_wifi)
-    print(all_wifi)
+    for wifi in all_wifi:
+        print(f'Name: {wifi[0]}, Password: {wifi[1]}\n-----------------------')
 
     pyfiglet.print_figlet(text="Success fully", colors='RED')

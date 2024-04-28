@@ -14,9 +14,9 @@ path_desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'desktop')
 
 # โค้ด command prompt
 name_file = "My_Script" #ชื่อไฟล์ Virus ปลอมที่จะสร้าง
-count_file = 20 # จำนวนไฟล์ Virus ที่จะสร้าง
+count_file = 5 # จำนวนไฟล์ Virus ที่จะสร้าง
 
-wall_image = 'Kazuya.png' # wallpaper ที่จะเปลี่ยน
+wall_image = f'{os.getcwd()}\Kazuya.jpg' # wallpaper ที่จะเปลี่ยน
 
 delay = 1
 cmd_code = [
@@ -59,11 +59,14 @@ def make_file(cmd_code, name_file="Script", count_file=1, delay=delay): # สร
                 f.write(line + "\n")
 
         print(f"สร้างไฟล์script_{count+1}.cmd")
-        time.sleep(0.2)
+        time.sleep(delay)
 
 def change_wallpaper(wall_image):
-    SPI_SETDESKWALLPAPER = 20
-    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, wall_image, 0)
+    if os.path.exists(wall_image):
+        print("Found file wallpaper")
+        ctypes.windll.user32.SystemParametersInfoW(20, 0, wall_image, 0)
+    else:
+        print("Not found file wallpaper!!")
 
 
 def main_virus(checked):
@@ -91,11 +94,11 @@ def main_virus(checked):
 
 
 
-# if __name__ == '__main__':
-#     # เช็คว่าต้องการรันโปรแกรม (ตอนแปลงเป็น exe จะได้รู้ด้วยว่าไฟล์รัน)
-#     answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
-#     if answer:
-#         time.sleep(2)
-#         main_virus()
-#     else:
-#         exit("You exit with program!")
+if __name__ == '__main__':
+    # เช็คว่าต้องการรันโปรแกรม (ตอนแปลงเป็น exe จะได้รู้ด้วยว่าไฟล์รัน)
+    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+    if answer:
+        time.sleep(2)
+        main_virus(True)
+    else:
+        exit("You exit with program!")

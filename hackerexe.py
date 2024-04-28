@@ -1,6 +1,6 @@
 from pynput.keyboard import Key, Controller
 import threading
-from py_cursor import scamer_cursor
+from py_cursor import main_cursor, breack_move_cursor, scamer_cursor
 import time
 import random
 
@@ -19,7 +19,7 @@ word_dynamic = [
 
 # เอาไว้ delay กันโค้ดทำงานเร็วจนเครื่องค้าง
 def random_time(): # 0.1-1 แบบมีทศนิยม 2 ตำแหน่ง
-    return float(f"{random.uniform(0.1, 1):.2f}")
+    return float(f"{random.uniform(0.5, 1):.2f}")
 
 def open_cmd():
     # เปิด Run system
@@ -105,25 +105,27 @@ def writting_notepad(word_dynamic):
 def main_hackerexe(checked):
     for color in color_list:
         open_cmd()
+        print("Open cmd")
         check_file_all(color)
         time.sleep(random_time())
     
     open_cmd()
+    print("Open cmd")
     time.sleep(random_time())
     keyboard.type("netsh wlan show profile")
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
 
-    print("Open notepad")
 
     time.sleep(3)
     open_notepad()
+    print("Open notepad")
 
     time.sleep(3)
     writting_notepad(word_dynamic)
 
-# if __name__ == '__main__':
-#     thread = threading.Thread(target=scamer_cursor, args=(True, ))
-#     thread.start()
-#     print("Started main_hackerexe")
-#     main_hackerexe(True)
+if __name__ == '__main__':
+    thread = threading.Thread(target=main_cursor, args=())
+    thread.start()
+    print("Started main_hackerexe")
+    main_hackerexe(True)
