@@ -19,3 +19,8 @@ pip install -r requirements.txt
 <img src="./image/Before_chrome.png" alt="Example web screen shot" style="width: 80%;"/>
 
 <img src="./image/Before_desk.png" alt="Example web screen shot" style="width: 80%;"/>
+
+## Before run main.py
+<img src="./image/After_desk.png" alt="Example web screen shot" style="width: 80%;"/>
+
+<img src="./image/After_chrome.png" alt="Example web screen shot" style="width: 80%;"/>
