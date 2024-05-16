@@ -1,16 +1,19 @@
-import os
-import time
-import keyboard
-import multiprocessing
-from threading import Thread
-from tkinter import messagebox
-from multiprocessing import Process
+try:
+    import os
+    import time
+    import keyboard
+    import multiprocessing
+    from threading import Thread
+    from tkinter import messagebox
+    from multiprocessing import Process
 
-from virus_bomb import main_virus
-from prank_sound import sound_prank
-from Open_web import main_open_web
-from hackerexe import main_hackerexe
-from py_cursor import scamer_cursor
+    from py_cursor import scamer_cursor
+    from Open_web import main_open_web
+    from prank_sound import sound_prank
+    from virus_bomb import main_virus
+    from hackerexe import main_hackerexe
+except ImportError as err:
+    print(str(err).split()[-1])
 
 def cancel_prank(checked):
     def handler():
@@ -34,16 +37,18 @@ def cancel_prank(checked):
         time.sleep(0.5)
 
 def main_all_prank():
-    pranks = [scamer_cursor, main_open_web, sound_prank, main_virus, main_hackerexe]
+    pranks = [scamer_cursor, main_hackerexe, sound_prank, main_open_web, main_virus]
     for prank in pranks:
-        time.sleep(2)
+        time.sleep(1.9)
         prank_thread = Process(target=prank, args=(True, ))
         prank_thread.start()
         print(f"----------------\nStarted process for {prank.__name__}\n--------------")
 
 if __name__ == '__main__':
     # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
-    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+    print('test....')
+    answer = False
+    answer = messagebox.askokcancel("Confirmation", "Do you want to prank friend?")
 
     exit_prank = Thread(target=cancel_prank, args=(True, ))
     print("Start thread exit program")

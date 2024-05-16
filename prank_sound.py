@@ -1,6 +1,9 @@
-import winsound
-import time
-import random
+try:
+    import winsound
+    import time
+    import random
+except Exception as err:
+    print("Error sound prank:", err)
 
 def sound_prank(checked):
     # กำหนดค่าความถี่และระยะเวลาของเสียง Beep

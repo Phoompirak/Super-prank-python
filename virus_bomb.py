@@ -14,7 +14,7 @@ path_desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'desktop')
 
 # โค้ด command prompt
 name_file = "My_Script" #ชื่อไฟล์ Virus ปลอมที่จะสร้าง
-count_file = 5 # จำนวนไฟล์ Virus ที่จะสร้าง
+count_file = 20 # จำนวนไฟล์ Virus ที่จะสร้าง
 
 wall_image = f'{os.getcwd()}\Kazuya.jpg' # wallpaper ที่จะเปลี่ยน
 
