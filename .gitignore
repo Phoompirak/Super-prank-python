@@ -2,3 +2,8 @@ build/
 dist
 __pycache__/
 main.spec
+Open_web.spec
+prank_sound.spec
+py_cursor.spec
+virus_bomb.spec
+wifi_os.spec
