@@ -14,15 +14,16 @@ To install the required dependencies, please make sure you have Python 3.11.2 in
 ```bash
 pip install -r requirements.txt
 ```
+<br />
 
-<<<<<<< HEAD
-convert a .py file to an .exe for easy use on your friend's computer, use the following command:
+Convert a .py file to an .exe for easy use on your friend's computer, use the following command:
+
+(make sure PyInstaller is installed first)
 ```bash
 python -m PyInstaller ./Open_web.py --onefile
 ```
-=======
+
 <br />
->>>>>>> 0e2c2c35173ce2cf2f5e025ab0ca9f1f2947cd7d
 
 ## Before run main.py
 <img src="./image/Before_chrome.png" alt="Example web screen shot" style="width: 80%;"/>
