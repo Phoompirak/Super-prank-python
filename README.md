@@ -20,6 +20,10 @@ Convert a .py file to an .exe for easy use on your friend's computer, use the fo
 
 (make sure PyInstaller is installed first)
 ```bash
+python -m PyInstaller [path to your file] [args]
+```
+For example
+```bash
 python -m PyInstaller ./Open_web.py --onefile
 ```
 
