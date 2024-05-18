@@ -15,17 +15,30 @@ To install the required dependencies, please make sure you have Python 3.11.2 in
 pip install -r requirements.txt
 ```
 
+<<<<<<< HEAD
 convert a .py file to an .exe for easy use on your friend's computer, use the following command:
 ```bash
 python -m PyInstaller ./Open_web.py --onefile
 ```
+=======
+<br />
+>>>>>>> 0e2c2c35173ce2cf2f5e025ab0ca9f1f2947cd7d
 
 ## Before run main.py
 <img src="./image/Before_chrome.png" alt="Example web screen shot" style="width: 80%;"/>
 
 <img src="./image/Before_desk.png" alt="Example web screen shot" style="width: 80%;"/>
 
-## Before run main.py
+## After run main.py
 <img src="./image/After_desk.png" alt="Example web screen shot" style="width: 80%;"/>
 
 <img src="./image/After_chrome.png" alt="Example web screen shot" style="width: 80%;"/>
+
+<br />
+
+# Credit Resources
+- [py_cursor](https://github.com/hack505/py_cursor)
+- [winsound](https://github.com/pnxl/tristan-prank/tree/master)
+- [open_web](https://github.com/Algorora/LoliFinder)
+- [hackexe](https://github.com/C41f0N/Hacker-Nightmare-Prank/tree/main)
+- [bomd_file](https://youtu.be/JJBjqUT1dxc?si=pvqTtQV7ljyoFixK)
