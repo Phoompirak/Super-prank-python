@@ -18,7 +18,8 @@ pip install -r requirements.txt
 
 Convert a .py file to an .exe for easy use on your friend's computer, use the following command:
 
-(make sure PyInstaller is installed first)
+(make sure PyInstaller is installed first And don't forget to turn off `virus` scanning.)
+
 ```bash
 python -m PyInstaller [path to your file] [args]
 ```
