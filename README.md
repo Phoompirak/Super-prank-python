@@ -22,10 +22,20 @@ Convert a .py file to an .exe for easy use on your friend's computer, use the fo
 
 ```bash
 python -m PyInstaller [path to your file] [args]
+
 ```
+or
+```bash
+pyinstaller [path to your file] [args]
+```
+
 For example
 ```bash
-python -m PyInstaller ./Open_web.py --onefile
+python -m PyInstaller ./Open_web.py --onefile -w
+```
+or
+```bash
+pyInstaller ./Open_web.py --onefile -w
 ```
 
 <br />
