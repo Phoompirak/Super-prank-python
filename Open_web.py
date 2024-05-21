@@ -2,7 +2,7 @@ import os
 import time
 import keyboard
 import threading
-from py_cursor import main_cursor
+from tkinter import messagebox
 
 def open_web(web_videos, delay):
     for web in web_videos:
@@ -28,8 +28,25 @@ def main_open_web(checked):
     if checked:
         open_web(web_videos, delay)
 
+def breack_move_cursor(checked):
+    while checked:
+        time.sleep(0.05)
+        # To break the loop
+        if keyboard.is_pressed('ctrl') and keyboard.is_pressed('s'):
+            print("breaked")
+            os._exit(0)
+            break
+    return
+
 if __name__ == '__main__':
-    time.sleep(5)
-    thread = threading.Thread(target=main_open_web, args=(True, ))
-    thread.start()
-    main_cursor()
+    answer = messagebox.askokcancel("Confirmation", "Do you want to open web?")
+
+    if answer:
+        thread = threading.Thread(target=breack_move_cursor, args=(True, ))
+        thread.start()
+        time.sleep(10)
+        main_open_web(True)
+        print("Run program open web!")
+    else:
+        print("You exit with program!")
+        os._exit(0)

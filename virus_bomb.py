@@ -1,6 +1,8 @@
 from ctypes import windll, wintypes
 from tkinter import messagebox
 from pyautogui import hotkey
+import keyboard
+import threading
 import pygame
 import ctypes
 import time
@@ -14,7 +16,7 @@ path_desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'desktop')
 
 # โค้ด command prompt
 name_file = "My_Script" #ชื่อไฟล์ Virus ปลอมที่จะสร้าง
-count_file = 20 # จำนวนไฟล์ Virus ที่จะสร้าง
+count_file = 10 # จำนวนไฟล์ Virus ที่จะสร้าง
 
 wall_image = f'{os.getcwd()}\Kazuya.jpg' # wallpaper ที่จะเปลี่ยน
 
@@ -30,26 +32,6 @@ cmd_code = [
     "netsh wlan show profile",
     "pause"
 ]
-
-def black_bg(count, long): # จอกระพริบ --> count = ครั้งของการกระพริบ, long = ความนานของจอสีดำ
-    FPS = 60
-    clock = pygame.time.Clock()
-
-    for c in range(count):
-        print(f"######### กระพิบรอบที่ {c} #########")
-        pygame.init() # สร้างหน้าจอ
-
-        bgClr = (0, 0, 0) # สีพื้นหลังตอนกระพริบ
-        scr = pygame.display.set_mode((0, 0), pygame.FULLSCREEN) # เต็มจอ
-        clock.tick(FPS)
-
-        pygame.display.set_caption('You are a Kratugjit krasharkjai!') # แคบชั่น
-        scr.fill(bgClr) # เติมพื้นหลังสีดำ
-        pygame.display.flip() # อัพเดทหน้าจอ
-
-        time.sleep(long)
-        pygame.quit() # ปิดจอดำ
-
 
 def make_file(cmd_code, name_file="Script", count_file=1, delay=delay): # สร้างไฟล์ .cmd
     for count in range(count_file):
@@ -70,7 +52,6 @@ def change_wallpaper(wall_image):
 
 
 def main_virus(checked):
-    # black_bg(3, 0.5) # กระพริบจอ
     time.sleep(1)
     change_wallpaper(wall_image=wall_image) # เปลี่ยน wallpaper
     hotkey("winleft", "d") # คีย์ลัด ซ่อนทุกโปรแกรมที่เปิดอยู่
@@ -92,13 +73,25 @@ def main_virus(checked):
 
     return 0;
 
-
+def breack_move_cursor(checked):
+    while checked:
+        time.sleep(0.05)
+        # To break the loop
+        if keyboard.is_pressed('ctrl') and keyboard.is_pressed('s'):
+            print("breaked")
+            os._exit(0)
+            break
+    return
 
 if __name__ == '__main__':
     # เช็คว่าต้องการรันโปรแกรม (ตอนแปลงเป็น exe จะได้รู้ด้วยว่าไฟล์รัน)
-    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+    answer = messagebox.askokcancel("Confirmation", "Do you want to virus bomb?")
+
     if answer:
-        time.sleep(2)
+        thread = threading.Thread(target=breack_move_cursor, args=(True, ))
+        thread.start()
+        time.sleep(10)
         main_virus(True)
     else:
-        exit("You exit with program!")
+        print("You exit with program!")
+        os._exit(0)

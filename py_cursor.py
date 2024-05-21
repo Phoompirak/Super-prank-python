@@ -51,6 +51,7 @@ def main_cursor():
     try:
         thread = threading.Thread(target=breack_move_cursor, args=(True, ))
         thread.start()
+        time.sleep(10)
         scamer_cursor(True)
 
     except ModuleNotFoundError as mnf:
@@ -67,7 +68,7 @@ def main_cursor():
 
 if __name__ == '__main__':
     # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
-    answer = messagebox.askokcancel("Confirmation", "Do you want to exit the program?")
+    answer = messagebox.askokcancel("Confirmation", "Do you want to py_cursor?")
 
     if answer:
         main_cursor()

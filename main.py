@@ -39,14 +39,13 @@ def cancel_prank(checked):
 def main_all_prank():
     pranks = [scamer_cursor, main_hackerexe, sound_prank, main_open_web, main_virus]
     for prank in pranks:
-        time.sleep(1.9)
+        time.sleep(2)
         prank_thread = Process(target=prank, args=(True, ))
         prank_thread.start()
         print(f"----------------\nStarted process for {prank.__name__}\n--------------")
 
 if __name__ == '__main__':
     # แสดงหน้าต่างข้อความแจ้งเตือนพร้อมปุ่ม "OK" และ "Cancel"
-    print('test....')
     answer = False
     answer = messagebox.askokcancel("Confirmation", "Do you want to prank friend?")
 

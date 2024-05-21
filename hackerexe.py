@@ -1,11 +1,15 @@
 from pynput.keyboard import Key, Controller
 import threading
-from py_cursor import main_cursor, breack_move_cursor, scamer_cursor
+import keyboard as kb
+from tkinter import messagebox
+# from py_cursor import main_cursor, breack_move_cursor, scamer_cursor
 import time
+import os
 import random
 
 # จำลองคีบอร์ดแบบ third Party(ตัวกลาง)
 keyboard = Controller()
+
 color_list = ["a", "c", "d"] # เขียว, แดง, ม่วง
 word_dynamic = [
     "ผีหลอกกกกกกกก แฮร่(≧◇≦)"
@@ -19,7 +23,7 @@ word_dynamic = [
 
 # เอาไว้ delay กันโค้ดทำงานเร็วจนเครื่องค้าง
 def random_time(): # 0.1-1 แบบมีทศนิยม 2 ตำแหน่ง
-    return float(f"{random.uniform(0.5, 1):.2f}")
+    return float(f"{random.uniform(0.5, 0.6):.2f}")
 
 def open_cmd():
     # เปิด Run system
@@ -124,8 +128,25 @@ def main_hackerexe(checked):
     time.sleep(3)
     writting_notepad(word_dynamic)
 
+def breack_move_cursor(checked):
+    while checked:
+        time.sleep(0.05)
+        # To break the loop
+        if kb.is_pressed('ctrl') and kb.is_pressed('s'):
+            print("breaked")
+            os._exit(0)
+            break
+    return
+
 if __name__ == '__main__':
-    thread = threading.Thread(target=main_cursor, args=())
-    thread.start()
-    print("Started main_hackerexe")
-    main_hackerexe(True)
+    answer = messagebox.askokcancel("Confirmation", "Do you want to hackerexe?")
+
+    if answer:
+        thread = threading.Thread(target=breack_move_cursor, args=(True, ))
+        thread.start()
+        time.sleep(10)
+        main_hackerexe(True)
+        print("Started main_hackerexe")
+    else:
+        print("You exit with program!")
+        os._exit(0)

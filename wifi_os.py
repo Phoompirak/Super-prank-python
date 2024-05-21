@@ -35,6 +35,7 @@ if __name__ == '__main__':
     reg_name_wifi = regular_wifi()
     all_wifi = looking_pws(reg_name_wifi)
     for wifi in all_wifi:
+        time.sleep(1)
         print(f'Name: {wifi[0]}, Password: {wifi[1]}\n-----------------------')
 
     pyfiglet.print_figlet(text="Success fully", colors='RED')
