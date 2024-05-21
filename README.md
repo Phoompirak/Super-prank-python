@@ -37,6 +37,10 @@ or
 ```bash
 pyInstaller ./Open_web.py --onefile -w
 ```
+<br />
+
+## How to EXIT.
+> **Press Ctrl+S to exit**
 
 <br />
 
