@@ -52,6 +52,13 @@ pyInstaller ./Open_web.py --onefile -w
 
 <br />
 
+### The `main.py` file is used to run five main `.py` files.
+
+### The `TEST_RUN_DIST.py` file is used to run the `.exe` file located in the `dist` folder.
+
+
+<br />
+
 # Credit Resources
 - [py_cursor](https://github.com/hack505/py_cursor)
 - [winsound](https://github.com/pnxl/tristan-prank/tree/master)
