@@ -6,15 +6,6 @@ import keyboard
 import threading
 from tkinter import messagebox
 
-# try:
-#     import pyautogui
-#     import keyboard
-#     import threading
-#     from tkinter import messagebox
-# except ImportError as err:
-#     name_library = str(err).split()[-1].strip("'\"")
-#     os.system(f"pip install {name_library}")
-
 def scamer_cursor(checked):
     # the main logic to move and break
     while checked:

